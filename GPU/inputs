@@ -1,0 +1,42 @@
+# Input file for 2D Linear Convection
+
+# Time stepping
+maxStep = 100
+SaveEvery = 10
+dt = 0.0005
+finalTime = 10.0
+
+# 2D domain and grid
+n_cell_x = 128
+n_cell_y = 128
+n_max = 16
+n_ghost = 3
+
+# Domain bounds
+x_min = -1.0
+x_max = 1.0
+y_min = -1.0
+y_max = 1.0
+
+# Physical parameters (2D velocities)
+Cx = 1.0    # Velocity in x-direction
+Cy = 0.0    # Velocity in y-direction
+
+# Geometry (2D periodic)
+geometry.is_periodic = 1 1 0
+geometry.coord_sys = 0
+geometry.prob_lo = -1.0 -1.0 0.0
+geometry.prob_hi =  1.0  1.0 0.0
+
+# AMReX runtime parameters
+amr.n_cell = 128 128
+amr.max_level = 0
+amr.blocking_factor = 8 8
+amr.max_grid_size = 32
+
+# Plotfile
+amr.plot_int = 100
+amr.plot_file = Output/plt
+
+# Debugging
+verbose = 1
